@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
-  has_one :stylist
+  enum user_type: [:client, :stylist]
 
   validates :email, presence: true, uniqueness: true
-  validates :user_type, presence: true, inclusion: { in: %w[stylist client] }
+  validates :password, presence: true, confirmation: true, length: { minimum: 6 }
+  validates :role, presence: true
 end

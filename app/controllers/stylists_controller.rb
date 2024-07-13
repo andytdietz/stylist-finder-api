@@ -8,4 +8,8 @@ class StylistsController < ApplicationController
     @stylist = Stylist.find_by(id: params[:id])
     render :show
   end
+
+  def update
+    @
+  end
 end

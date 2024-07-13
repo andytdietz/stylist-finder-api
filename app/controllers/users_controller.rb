@@ -24,6 +24,10 @@ class UsersController < ApplicationController
         facebook_url: params[:facebook_url],
         booking_url: params[:booking_url],
       )
+    elsif user.user_type == "client"
+      user.build_client(
+        username: params[:username],
+      )
     end
     if user.save
       render json: { message: "User created successfully" }, status: :created
