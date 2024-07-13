@@ -5,4 +5,9 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :password, presence: true, confirmation: true, length: { minimum: 6 }
   validates :role, presence: true
+
+  has_one :stylist
+  has_one :client
+
+  accepts_nested_attributes_for :stylist, :client  # If using nested attributes
 end
