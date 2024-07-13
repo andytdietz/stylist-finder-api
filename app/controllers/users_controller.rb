@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     )
     if user.user_type == "stylist"
       user.build_stylist(
-        name: params[:stylist_name],
+        name: params[:name],
         address1: params[:address1],
         address2: params[:address2],
         city: params[:city],

@@ -10,7 +10,7 @@ class StylistsController < ApplicationController
   end
 
   def update
-    stylist = Stylist.find_by(id: params[:id])
+    stylist = current_user.stylist
     if stylist.update(
       name: params[:name] || stylist.name,
       address1: params[:address1] || stylist.address1,
