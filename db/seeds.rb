@@ -7,3 +7,17 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+Stylist.create(
+  name: "Andy",
+  address1: "123 fake st",
+  address2: "unit c",
+  city: "denver",
+  state: "CO",
+  zip: "80224",
+  website: "google.com",
+  instagram_url: "instagram.com",
+  facebook_url: "facebook.com",
+  user_id: 1,
+  booking_url: "vagaro.com",
+)

@@ -1,0 +1,11 @@
+json.id stylist.id
+json.name stylist.name
+json.address1 stylist.address1
+json.address2 stylist.address2
+json.city stylist.city
+json.state stylist.state
+json.zip stylist.zip
+json.website stylist.website
+json.instagram_url stylist.instagram_url
+json.facebook_url stylist.facebook_url
+json.booking_url stylist.booking_url
