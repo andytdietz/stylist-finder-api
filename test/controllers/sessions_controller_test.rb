@@ -1,18 +1,12 @@
 require "test_helper"
 
 class SessionsControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get sessions_new_url
-    assert_response :success
-  end
+  test "create" do
+    post "/users.json", params: { email: "test@test.com", password: "password", password_confirmation: "password", user_type: "client", username: "testttt" }
+    post "/sessions.json", params: { email: "test@test.com", password: "password" }
+    assert_response 201
 
-  test "should get create" do
-    get sessions_create_url
-    assert_response :success
-  end
-
-  test "should get destroy" do
-    get sessions_destroy_url
-    assert_response :success
+    data = JSON.parse(response.body)
+    assert_equal ["jwt", "email", "user_id"], data.keys
   end
 end

@@ -1,13 +1,10 @@
 require "test_helper"
 
 class UsersControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get users_new_url
-    assert_response :success
-  end
-
-  test "should get create" do
-    get users_create_url
-    assert_response :success
+  test "create" do
+    assert_difference "User.count", 1 do
+      post "/users.json", params: { name: "Test", email: "test@test.com", password: "password", password_confirmation: "password", user_type: "client", username: "testtttt" }
+      assert_response 201
+    end
   end
 end
